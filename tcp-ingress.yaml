@@ -5,6 +5,7 @@ metadata:
   namespace: default
   annotations:
     ingress.appscode.com/type: HostPort
+    ingress.appscode.com/node-selector: '{ "kubernetes.io/hostname": "minikube" }'
 spec:
   rules:
   - tcp:
