@@ -1,0 +1,21 @@
+apiVersion: voyager.appscode.com/v1beta1
+kind: Ingress
+metadata:
+  name: application-bloxy
+  namespace: default
+  annotations:
+    ingress.appscode.com/type: HostPort
+spec:
+  rules:
+  - tcp:
+      port: '80'
+      noTLS: true
+      backend:
+        serviceName: web
+        servicePort: '80'
+  - tcp:
+      port: '443'
+      noTLS: true
+      backend:
+        serviceName: echo
+        servicePort: '443'
